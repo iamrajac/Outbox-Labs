@@ -10,6 +10,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     port: 5173,
+    allowedHosts: true, // lets an ngrok tunnel host reach the dev server (needed for Slack OAuth)
     proxy: { "/api": backend, "/admin": backend },
   },
 });
